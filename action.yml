@@ -1,0 +1,48 @@
+name: 'tinysend send'
+description: 'Send email to your audience from any workflow — release notes, incident updates, digests. SMS and WhatsApp coming.'
+author: 'tinysend'
+
+branding:
+  icon: 'mail'
+  color: 'blue'
+
+inputs:
+  api-key:
+    description: 'tinysend API key (sk_...). Store it as a repo secret.'
+    required: true
+  list:
+    description: 'List id to send to.'
+    required: true
+  subject:
+    description: 'Email subject.'
+    required: true
+  body:
+    description: 'Message content. Markdown by default (see format).'
+    required: false
+  body-file:
+    description: 'Read content from a file instead of body.'
+    required: false
+  format:
+    description: 'Content format: markdown (default), html, or text.'
+    required: false
+    default: 'markdown'
+  channel:
+    description: 'Delivery channel. email (default). sms and whatsapp coming soon.'
+    required: false
+    default: 'email'
+  draft:
+    description: 'Set true to create the post without sending it.'
+    required: false
+    default: 'false'
+
+outputs:
+  post-id:
+    description: 'Id of the created post.'
+  status:
+    description: 'Post status after the run (sent or draft).'
+  recipients:
+    description: 'Number of recipients the post was sent to (0 for drafts).'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
