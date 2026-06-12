@@ -2,7 +2,7 @@
 
 Send email to your audience from any GitHub workflow. Release notes, incident updates, deploy notes, digests — one step, no server.
 
-[![subscribers](https://api.tinysend.com/v1/badges/updates/subscribers.svg)](https://updates.tinysend.com)
+[![subscribers](https://updates.tinysend.com/subscribers.svg)](https://updates.tinysend.com)
 
 ```yaml
 - uses: tiny-send/send@v1
